@@ -186,6 +186,8 @@ rmw_create_subscription(
   }
 
   memcpy(const_cast<char *>(rmw_subscription->topic_name), topic_name, strlen(topic_name) + 1);
+
+  rmw_subscription->can_loan_messages = false;
   return rmw_subscription;
 
 fail:
