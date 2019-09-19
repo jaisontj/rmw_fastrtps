@@ -77,6 +77,28 @@ __rmw_count_publishers(
         *count += it->second.size();
       }
     }
+
+    std::cout<<slave_target->writer_topic_cache();
+    /**
+    auto & participant_topics = slave_target->writer_topic_cache().getParticipantToTopics();
+	std::for_each(participant_topics.begin(), participant_topics.end(), [](const auto & element) {
+			std::cout<<"GUID: "<<element.first<<std::endl;
+			std::for_each(element.second.begin(), element.second.end(), [](const auto & telement) {
+					std::cout<<"\tKey: "<<telement.first<<std::endl;
+					for (const auto & val: telement.second) {
+						std::cout<<"\t\tVal: "<<val<<std::endl;
+					}
+			});
+	});
+	auto & dNames = slave_target->discovered_names;
+	std::for_each(dNames.begin(), dNames.end(), [] (const auto & element){
+	    std::cout<<"GUID: "<<element.first<<" NAME: "<<element.second<<std::endl;
+	});
+	auto & dNS = slave_target->discovered_namespaces;
+      std::for_each(dNS.begin(), dNS.end(), [] (const auto & element){
+          std::cout<<"GUID: "<<element.first<<" NAMESpace: "<<element.second<<std::endl;
+      });
+      **/
   }
 
   RCUTILS_LOG_DEBUG_NAMED(

@@ -171,9 +171,11 @@ public:
       if (is_alive) {
         trigger = topic_cache().addTopic(proxyData.RTPSParticipantKey(),
             proxyData.topicName().to_string(), proxyData.typeName().to_string());
+          std::cout<<"PD ADD: "<<proxyData.guid()<<" QOS Deadline: "<<proxyData.m_qos.m_deadline.period<<std::endl;
       } else {
         trigger = topic_cache().removeTopic(proxyData.RTPSParticipantKey(),
             proxyData.topicName().to_string(), proxyData.typeName().to_string());
+          std::cout<<"PD REMOVE: "<<proxyData.guid()<<" QOS Deadline: "<<proxyData.m_qos.m_deadline.period<<std::endl;
       }
     }
     if (trigger) {

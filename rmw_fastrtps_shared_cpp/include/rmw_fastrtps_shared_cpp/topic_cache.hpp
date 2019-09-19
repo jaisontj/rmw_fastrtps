@@ -117,6 +117,7 @@ public:
   {
     initializeTopic(topic_name, topic_to_types_);
     auto guid = iHandle2GUID(rtpsParticipantKey);
+    std::cout<<"Add Topic: "<<guid<<std::endl;
     initializeParticipantMap(participant_to_topics_, guid);
     initializeTopic(topic_name, participant_to_topics_[guid]);
     if (rcutils_logging_logger_is_enabled_for("rmw_fastrtps_shared_cpp",
